@@ -2,7 +2,7 @@
     "name": "iammati/synchro",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "0.0.3",
     "minimum-stability": "dev",
     "authors": [
         {
