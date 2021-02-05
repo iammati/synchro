@@ -16,9 +16,13 @@ class Sync
     /**
      * @param string $ddevDir
      */
-    public function __construct()
+    public function __construct(string $ddev = '')
     {
-        $this->ddevConfig = Yaml::parseFile($_SERVER['DOCUMENT_ROOT'] . '/.ddev/config.yaml');
+        if ($ddev == '') {
+            $ddev = $_SERVER['DOCUMENT_ROOT'] . '/.ddev';
+        }
+
+        $this->ddevConfig = Yaml::parseFile('/config.yaml');
     }
 
     /**
