@@ -15,5 +15,8 @@
         "psr-4": {
             "Iammati\\Synchro\\": ""
         }
+    },
+    "require": {
+        "symfony/yaml": "^5.2"
     }
 }
