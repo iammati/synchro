@@ -4,6 +4,7 @@ namespace Iammati\Synchro;
 
 use Phar;
 use PharData;
+use RecursiveIteratorIterator;
 use Symfony\Component\Yaml\Yaml;
 
 class Sync
@@ -22,7 +23,7 @@ class Sync
             $ddev = $_SERVER['DOCUMENT_ROOT'] . '/.ddev';
         }
 
-        $this->ddevConfig = Yaml::parseFile('/config.yaml');
+        $this->ddevConfig = Yaml::parseFile($ddev . '/config.yaml');
     }
 
     /**
@@ -37,6 +38,10 @@ class Sync
         echo "Creating new $name.tar.gz...\n";
 
         try {
+            if (file_exists($name . '.tar')) {
+                $name .= '_' . time();
+            }
+
             $pharData = new PharData($name . '.tar');
 
             $pharData->buildFromDirectory($source);
