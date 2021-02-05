@@ -1,0 +1,19 @@
+{
+    "name": "iammati/synchro",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Mati",
+            "email": "mati_01@icloud.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Iammati\\Synchro\\": ""
+        }
+    }
+}
