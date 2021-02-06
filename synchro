@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+(function () {
+    require __DIR__.'/vendor/autoload.php';
+
+    (new \Iammati\Synchro\Sync(
+        // Remote Host-IP
+        '192.168.1.117',
+        realpath(__DIR__.'/../.ddev')
+    ))->create(
+        // Excluded directories
+        [
+            'node_modules',
+            'vendor',
+            'web/typo3',
+        ],
+
+        // Source-Directories
+        '../web',
+        '../new_Build'
+    );
+})();
