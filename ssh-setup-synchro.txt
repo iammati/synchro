@@ -1,0 +1,9 @@
+SSH setup for Syncro:
+
+[Run the following command on CLI on your ddev / ubuntu-distro inside a terminal]
+
+$ ssh-keygen
+$ ssh-copy-id $USER:$HOST
+
+where $USER could be dev
+and $HOST like 192.168.1.117

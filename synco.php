@@ -2,9 +2,7 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-$start = microtime(true);
+$remoteHost = '192.168.1.117';
+$ddevPath = realpath(__DIR__.'/../.ddev');
 
-(new \Iammati\Synchro\Sync(__DIR__.'/../.ddev'))->create('../.');
-
-$timeElapsedSecs = microtime(true) - $start;
-var_dump($timeElapsedSecs);
+(new \Iammati\Synchro\Sync($remoteHost, $ddevPath))->create('../web', '../new_Build');
