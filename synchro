@@ -7,7 +7,7 @@
     (new \Iammati\Synchro\Sync(
         // Remote Host-IP
         '192.168.1.117',
-        realpath(__DIR__.'/../.ddev')
+        realpath(__DIR__.'/../../.ddev')
     ))->create(
         // Excluded directories
         [
@@ -17,7 +17,8 @@
         ],
 
         // Source-Directories
-        '../web',
-        '../new_Build'
+        // '../../web',
+        // '../../new_Build',
+        '../../Configuration'
     );
 })();
