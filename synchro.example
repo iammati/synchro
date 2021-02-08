@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+(function () {
+    require __DIR__.'/vendor/autoload.php';
+
+    (new \Iammati\Synchro\Sync(
+        // Remote Host-IP
+        '192.168.1.117',
+
+        // Absolute path (by using realpath-function) to the .ddev-directory of your project
+        realpath(__DIR__.'/../../.ddev')
+    ))->create(
+        // Excluded directories (relative to your rootpath of your project)
+        [
+            'node_modules',
+            'vendor',
+            'web/typo3',
+        ],
+
+        // Source-Directories (relative from your /<project-path>/tools/ddev-synchro/)
+        // '../../web',
+        // '../../new_Build',
+        '../../Configuration'
+    );
+})();
